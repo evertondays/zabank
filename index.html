@@ -24,24 +24,30 @@
 	<div id="content">
 		<nav>
 			<div class="container">
-				<div class="left">
+				<div class="mobile">
+					<h1>LOGO AQUI</h1>
+					<button id="mobile-menu-btn"><i class="icon" data-lucide="menu"></i></button>
+				</div>
+				<div class="left menu-collapsed">
 					<h1>ZaBank</h1>
 					<ul>
 						<li>
-							<a href="https://google.com">Sobre nós</a>
+							<a href="#">Sobre nós</a>
 						</li>
 					</ul>
 				</div>
-				<div class="right">
+				<div class="right menu-collapsed">
 					<ul>
 						<li>
-							<a href="https://google.com"><b>Criar conta</b></a>
+							<a href="/pages/user/create-user.html"><b>Criar conta</b></a>
+						</li>
+						<li>
+							<button class="btn primary" onclick="location.href='/pages/user/login.html';">
+								Entrar
+								<i class="icon" data-lucide="log-in"></i>
+							</button>
 						</li>
 					</ul>
-					<button class="btn primary">
-						Entrar
-						<i class="icon" data-lucide="log-in"></i>
-					</button>
 				</div>
 			</div>
 		</nav>
@@ -55,6 +61,7 @@
 		<footer>footer</footer>
 	</div>
 
+	<script src="/js/nav.js"></script>
 	<!-- Icons Import -->
 	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 	<script>
