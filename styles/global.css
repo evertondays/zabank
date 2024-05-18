@@ -1,5 +1,7 @@
 :root {
     --primary: #55ea53;
+    --primary-1: #19d017;
+    --primary-0: #81f67f;
     --primary-dark: #0f870e;
     --text: #1b1b1b;
     --background: #fdfafa;
@@ -76,4 +78,39 @@ select,
 button,
 textarea:focus {
     outline: none;
+}
+
+b {
+  font-weight: 700;
+}
+
+/* Componentes */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 19px;
+  
+  font-size: 17px;
+  font-weight: 700;
+
+  border: none;
+  
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.btn .icon {
+  width: 20px;  
+  margin-left: 7px;
+}
+
+.primary {
+  color: white;
+  background-color: var(--primary);
+}
+
+.primary:hover {
+  background-color: var(--primary-0);
 }

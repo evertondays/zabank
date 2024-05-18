@@ -2,29 +2,64 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Font Import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet">
+	<!-- Font Import -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+		rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/global.css">
-    <title>Document</title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/global.css">
+	<link rel="stylesheet" href="styles/nav.css">
+	<link rel="stylesheet" href="styles/home.css">
+
+	<title>ZaBank - Home</title>
 </head>
 
 <body>
-    <div id="content">
-        <footer>footer <i data-lucide="x"></i></footer>
-    </div>
+	<div id="content">
+		<nav>
+			<div class="container">
+				<div class="left">
+					<h1>ZaBank</h1>
+					<ul>
+						<li>
+							<a href="https://google.com">Sobre nós</a>
+						</li>
+					</ul>
+				</div>
+				<div class="right">
+					<ul>
+						<li>
+							<a href="https://google.com"><b>Criar conta</b></a>
+						</li>
+					</ul>
+					<button class="btn primary">
+						Entrar
+						<i class="icon" data-lucide="log-in"></i>
+					</button>
+				</div>
+			</div>
+		</nav>
 
-    <!-- Icons Import -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+		<div class="welcome-container">
+			<div class="welcome-text">
+				<h1>Uma <b>nova</b> maneira de lidar com as contas.</h1>
+				<h2>Tudo do seu jeito, tudo para você!</h2>
+			</div>
+		</div>
+		<footer>footer</footer>
+	</div>
+
+	<!-- Icons Import -->
+	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+	<script>
+		lucide.createIcons();
+	</script>
 </body>
 
 </html>
