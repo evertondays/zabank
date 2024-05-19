@@ -6,7 +6,7 @@ const collapsedParts = document.querySelectorAll('.menu-collapsed');
 menuButton.addEventListener('click', () => toggleMenuOpen());
 
 function toggleMenuOpen() {
-    if (menuIsOpen) {
+    if (!menuIsOpen) {
         collapsedParts.forEach((item) => {
             item.classList.add("opened");
         });

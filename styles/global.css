@@ -1,87 +1,125 @@
 :root {
-    --primary: #55ea53;
-    --primary-1: #19d017;
-    --primary-0: #81f67f;
-    --primary-dark: #0f870e;
-    --text: #1b1b1b;
-    --background: #fdfafa;
+  --primary: #55ea53;
+  --primary-1: #19d017;
+  --primary-0: #81f67f;
+  --primary-dark: #0f870e;
+  --text: #1b1b1b;
+  --background: #fdfafa;
+  --dark-grey: #afafaf73;
 
-    font-size: 60%;
+  font-size: 60%;
 }
 
 html,
 body {
-    height: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-    background: var(--background);
-    
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  background: var(--background);
 
-    color: var(--text);
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  color: var(--text);
 }
 
 @media (min-width: 700px) {
-    :root {
-        font-size: 62.5%;
-    }
+  :root {
+    font-size: 62.5%;
+  }
 }
 
 #content {
-    min-height: 100%;
-    position: relative;
-    padding-bottom: 30px;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 30px;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
 }
 
 input,
 select,
 button,
 textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
-    color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
 }
 
 a:visited,
 a:active,
 a:link,
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 input,
 select,
 button,
 textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 b {
   font-weight: 700;
+}
+
+/* Barra */
+::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-grey);
+}
+
+@media screen and (min-width: 801px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+/* Seleção */
+::selection {
+  background: var(--primary-0);
+  color: var(--text);
+}
+
+::-moz-selection {
+  background: var(--primary-0);
+  color: var(--text);
 }
 
 /* Componentes */
@@ -90,19 +128,19 @@ b {
   align-items: center;
   justify-content: center;
   padding: 8px 19px;
-  
+
   font-size: 17px;
   font-weight: 700;
 
   border: none;
-  
+
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.4s;
 }
 
 .btn .icon {
-  width: 20px;  
+  width: 20px;
   margin-left: 7px;
 }
 

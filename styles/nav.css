@@ -81,6 +81,7 @@ nav .container ul li a:hover {
   }
 }
 
+/* mobile */
 #mobile-menu-btn {
   width: 40px;
   height: 40px;
@@ -90,13 +91,22 @@ nav .container ul li a:hover {
   border-radius: 90rem;
 }
 
-
-#mobile-menu-btn.opened {
-  background-color: #afafaf73;
+#mobile-menu-btn .open {
+  display: none;
 }
 
+#mobile-menu-btn.opened {
+  background-color: var(--dark-grey);
+}
 
-/* mobile */
+#mobile-menu-btn.opened .open {
+  display: block;
+}
+
+#mobile-menu-btn.opened .close {
+  display: none;
+}
+
 @media (max-width: 800px) {
   nav {
     height: auto;
