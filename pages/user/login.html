@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Font Import -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+		rel="stylesheet">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../../styles/reset.css">
+	<link rel="stylesheet" href="../../styles/global.css">
+	<link rel="stylesheet" href="../../styles/account.css">
+
+	<title>Login - ZaBank</title>
+	<link size="25x25px" rel='shortcut icon' href="/assets/logos/favicon.png"/>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="background" style="background-image: url('/assets/images/account-background-1.jpg')"></div>
+		<div class="container">
+			<form method="post">
+				<h1>Bom te ver de novo!</h1>
+				<div class="input-container">
+					<label for="email-input">Qual é seu email?</label>
+					<input #id="email-input" type="email" placeholder="Digite seu email">
+				</div>
+				<div class="input-container">
+					<label for="email-input">Sua senha</label>
+					<input #id="password-input" type="password" placeholder="Digite sua senha">
+				</div>
+
+				<button class="btn primary">
+					Entrar
+					<i class="icon" data-lucide="log-in"></i>
+				</button>
+				<a href="/pages/user/create-user.html">Não tem uma conta? crie uma aqui</a>
+				<a class="home-link" href="/index.html">Voltar para home</a>
+			</form>
+		</div>
+	</div>
+
+	<!-- Icons Import -->
+	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+	<script>
+		lucide.createIcons();
+	</script>
+</body>

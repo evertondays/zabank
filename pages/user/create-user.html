@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Font Import -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+		rel="stylesheet">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../../styles/reset.css">
+	<link rel="stylesheet" href="../../styles/global.css">
+	<link rel="stylesheet" href="../../styles/account.css">
+
+	<title>Criar conta - ZaBank</title>
+	<link size="25x25px" rel='shortcut icon' href="/assets/logos/favicon.png"/>
+</head>	
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<form method="post">
+				<h1>Vamos começar?</h1>
+				<div class="input-container">
+					<label for="name-input">Como podemos te chamar?</label>
+					<input #id="name-input" type="text" placeholder="Digite seu nome">
+				</div>
+				<div class="input-container">
+					<label for="email-input">E seu email?</label>
+					<input #id="email-input" type="text" placeholder="Digite seu email">
+				</div>
+				<div class="input-container">
+					<label for="password-input">Agora escolha uma senha</label>
+					<input #id="password-input" type="password" placeholder="Digite sua senha">
+				</div>
+	
+				<button class="btn primary">Criar conta</button>
+				<a href="/pages/user/login.html">Já tem uma conta? Faca login aqui</a>
+				<a class="home-link" href="/index.html">Voltar para home</a>
+			</form>
+		</div>
+		<div class="background" style="background-image: url('/assets/images/account-background-2.jpg')"></div>
+	</div>
+</body>
