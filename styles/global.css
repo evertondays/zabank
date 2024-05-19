@@ -53,7 +53,6 @@ footer {
   position: absolute;
   bottom: 0;
 }
-
 input,
 select,
 button,
@@ -69,9 +68,12 @@ a {
 
 a:visited,
 a:active,
-a:link,
-a:hover {
+a:link {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 input,
@@ -151,4 +153,14 @@ b {
 
 .primary:hover {
   background-color: var(--primary-0);
+}
+
+.card {
+  border-radius: 17px;
+  background-color: white;
+  box-shadow:
+    2.9px 4.5px 3.6px rgba(0, 0, 0, 0.042),
+    8.1px 12.5px 10px rgba(0, 0, 0, 0.06),
+    19.6px 30.1px 24.1px rgba(0, 0, 0, 0.078),
+    65px 100px 80px rgba(0, 0, 0, 0.12);
 }

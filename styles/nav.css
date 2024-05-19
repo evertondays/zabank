@@ -32,6 +32,7 @@ nav .container h1 {
   font-size: 1.95rem;
   font-weight: 900;
   color: var(--primary);
+  margin-left: 10px;
 }
 
 nav .container .left,
@@ -57,6 +58,16 @@ nav .container ul li+li {
 
 nav .container ul li a:hover {
   text-decoration: underline;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 45px;
+  height: 45px;
 }
 
 .mobile {
@@ -105,6 +116,11 @@ nav .container ul li a:hover {
 
 #mobile-menu-btn.opened .close {
   display: none;
+}
+
+.mobile img {
+  width: 50px;
+  height: 50px;
 }
 
 @media (max-width: 800px) {
