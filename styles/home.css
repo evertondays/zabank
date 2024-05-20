@@ -118,3 +118,55 @@
     font-size: 1.75rem;
   }
 }
+
+/* about */
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 6rem;
+  align-items: center;
+}
+
+.about .info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  max-width: 80vw;
+  padding: 3rem;
+  background-color: white;
+
+  border-radius: 21px;
+  box-shadow:  7px 7px 14px #929292,
+              -7px -7px 14px #ffffff;
+}
+
+.about .info.revert {
+  grid-template-columns: 3fr 1fr;
+}
+
+.about .info .image-container {
+  padding: 2rem;
+}
+
+.about .info .image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.about .info h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.about .info .text {
+  font-size: 2.1rem;
+  line-height: 29px;
+  letter-spacing: 2px;
+}
+
+.about .info + .info {
+  margin-top: 5rem;
+}
