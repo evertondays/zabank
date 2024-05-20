@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +17,27 @@
 	<link rel="stylesheet" href="../../styles/account.css">
 
 	<title>Criar conta - ZaBank</title>
-	<link size="25x25px" rel='shortcut icon' href="/assets/logos/favicon.png"/>
-</head>	
+	<link size="25x25px" rel='shortcut icon' href="/assets/logos/favicon.png" />
+</head>
+
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<form method="post">
+			<form id="create-user-form" method="post">
 				<h1>Vamos começar?</h1>
 				<div class="input-container">
 					<label for="name-input">Como podemos te chamar?</label>
-					<input #id="name-input" type="text" placeholder="Digite seu nome">
+					<input id="name-input" type="text" placeholder="Digite seu nome" required>
 				</div>
 				<div class="input-container">
 					<label for="email-input">E seu email?</label>
-					<input #id="email-input" type="text" placeholder="Digite seu email">
+					<input id="email-input" type="text" placeholder="Digite seu email" required>
 				</div>
 				<div class="input-container">
 					<label for="password-input">Agora escolha uma senha</label>
-					<input #id="password-input" type="password" placeholder="Digite sua senha">
+					<input id="password-input" type="password" placeholder="Digite sua senha" required>
 				</div>
-	
+
 				<button class="btn primary">Criar conta</button>
 				<a href="/pages/user/login.html">Já tem uma conta? Faca login aqui</a>
 				<a class="home-link" href="/index.html">Voltar para home</a>
@@ -44,9 +46,13 @@
 		<div class="background" style="background-image: url('/assets/images/account-background-2.jpg')"></div>
 	</div>
 
+	<!-- Axios para efetuar as requests -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<!-- Icons Import -->
 	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 	<script>
 		lucide.createIcons();
 	</script>
-	<script src="/js/user/login.js"></script>
+	<script src="/js/toast.js"></script>
+	<script src="/js/user/create-user.js"></script>
 </body>
