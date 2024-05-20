@@ -31,7 +31,7 @@ class UserApplication {
     async login(req, res) {
         const user = await repository.findByEmail(req.body.email)
         if (!user) {
-            res.status(400).json({ message: 'Usuário não cadastrado!' });
+            res.status(401).json({ message: 'Usuário não cadastrado!' });
             return;
         }
 
@@ -41,7 +41,7 @@ class UserApplication {
             return;
         }
 
-        res.sendStatus(401);
+        res.status(401).json({ message: 'Senha incorreta!' });
     }
 }
 
