@@ -11,7 +11,10 @@ async function login() {
         email: email,
         password: password
     }).then((response) => {
+        sessionStorage.setItem("id", response.data.id);
+        sessionStorage.setItem("name", response.data.name);
         sessionStorage.setItem("token", response.data.token);
+
         window.location.href = '../account/index.html';
 	})
 	.catch((err) => {

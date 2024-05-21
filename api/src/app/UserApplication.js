@@ -19,13 +19,14 @@ class UserApplication {
         if (validation) {
             res.status(400).json({ message: validation });
         };
-    
+
         user.password = await credentials.hash(user.password);
-        user = await repository.store(user);
+        await repository.store(user);
+        user = await repository.findByEmail(user.email);
 
-        const token = await credentials.createToken(user.lastID);
+        const token = await credentials.createToken(user.id);
 
-        res.status(201).json({ token: token });
+        res.status(201).json({ id: user.id, name: user.name, token: token });
     }
 
     async login(req, res) {
@@ -37,11 +38,16 @@ class UserApplication {
 
         if (await credentials.verify(user, req.body.password)) {
             const token = await credentials.createToken(user.id)
-            res.status(200).json({ token: token });
+            res.status(200).json({ id: user.id, name: user.name, token: token });
             return;
         }
 
         res.status(401).json({ message: 'Senha incorreta!' });
+    }
+
+    async get(req, res) {
+        res.sendStatus(200);
+        return;
     }
 }
 

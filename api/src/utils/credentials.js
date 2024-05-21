@@ -19,6 +19,12 @@ class Credentials {
 
         return token;
     }
+
+    async verifyToken(userId, token) {
+        const user = await userRepository.getByToken(userId, token);
+
+        return user ? true : false;
+    }
 }
 
 module.exports = Credentials;

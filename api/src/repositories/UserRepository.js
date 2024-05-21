@@ -25,6 +25,14 @@ class UserRepository {
             `);
         })
     }
+
+    async getByToken(userId, token) {
+        return db().then(async (db) => {
+            return await db.get(`
+                SELECT * FROM users WHERE id = ? AND token = ?
+            `, userId, token);
+        })
+    }
 }
 
 module.exports = UserRepository;
