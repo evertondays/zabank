@@ -45,9 +45,19 @@ class UserApplication {
         res.status(401).json({ message: 'Senha incorreta!' });
     }
 
-    async get(req, res) {
+    async myself(req, res) {
+        const authUserId = req.headers.id;
+        const myself = await repository.find(authUserId);
+
+        const response = { id: myself.id, name: myself.name, picture: myself.picture } 
+        res.status(200).json(response);
+    }
+
+    async logout(req, res) {
+        const authUserId = req.headers.id;
+        await repository.updateToken(authUserId, null);
+
         res.sendStatus(200);
-        return;
     }
 }
 

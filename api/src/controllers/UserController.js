@@ -7,6 +7,7 @@ const userApplication = new UserApplication();
 
 routes.post('/api/user', userApplication.create);
 routes.post('/api/login', userApplication.login);
-routes.get('/api/user/:userId', AuthMiddleware, userApplication.get);
+routes.get('/api/myself', AuthMiddleware, userApplication.myself);
+routes.delete('/api/logout', AuthMiddleware, userApplication.logout);
 
 module.exports = routes;

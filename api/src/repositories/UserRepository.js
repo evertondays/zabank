@@ -1,6 +1,14 @@
 const db = require('../../database/connection');
 
 class UserRepository {
+    async find(id) {
+        return db().then(async (db) => {
+            return await db.get(`
+                SELECT * FROM users WHERE id = ?
+            `, id);
+        })
+    }
+
     async store(user) {
         return db().then(async (db) => {
             return await db.run(`
