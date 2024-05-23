@@ -20,3 +20,13 @@ function toggleMenuOpen() {
 
     menuIsOpen = !menuIsOpen;
 }
+
+function getUserName() {
+    const name = sessionStorage.getItem('name');
+    
+    if (!name) return;
+
+    document.querySelector('.desktop-version').textContent = `Olá, ${name}`;
+}
+
+getUserName();
