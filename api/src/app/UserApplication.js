@@ -63,10 +63,14 @@ class UserApplication {
 
     res.sendStatus(200);
   }
+
   async deposit(req, res) {
     const authUserId = req.headers.id;
     const value = req.body.value;
-    await repository.updateValue(authUserId, value);
+
+    const user = await repository.find(authUserId);
+
+    await repository.updateValue(authUserId, user.value + value);
     res.sendStatus(200);
   }
 }
