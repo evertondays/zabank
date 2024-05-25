@@ -11,5 +11,6 @@ routes.get("/api/myself", AuthMiddleware, userApplication.myself);
 routes.delete("/api/logout", AuthMiddleware, userApplication.logout);
 
 routes.post("/api/user/deposit", AuthMiddleware, userApplication.deposit);
+routes.post("/api/user/withdraw", AuthMiddleware, userApplication.withdraw);
 
 module.exports = routes;

@@ -53,6 +53,7 @@ class UserApplication {
       id: myself.id,
       name: myself.name,
       picture: myself.picture,
+      value: myself.value,
     };
     res.status(200).json(response);
   }
@@ -71,6 +72,21 @@ class UserApplication {
     const user = await repository.find(authUserId);
 
     await repository.updateValue(authUserId, user.value + value);
+    res.sendStatus(200);
+  }
+
+  async withdraw(req, res) {
+    const authUserId = req.headers.id;
+    const value = req.body.value;
+
+    const user = await repository.find(authUserId);
+
+    if (user.value - value < 0) {
+      res.status(400).json({ message: "Saldo Insuficiente!" });
+      return;
+    }
+
+    await repository.updateValue(authUserId, user.value - value);
     res.sendStatus(200);
   }
 }
