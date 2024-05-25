@@ -3,6 +3,7 @@ const port = 3333;
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+require('./frontend');
 
 const app = express();
 
@@ -18,5 +19,5 @@ app.listen(port, () => {
     var logDate = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 
     console.clear();
-    console.log(`O servidor está no ar!\n\n  + url: http://localhost:${port}/\n  + criado por: Alejandro, Eloiza e Everton\n\n-> Última atualização às ${logDate}\n`);
+    console.log(`O servidor está no ar!\n\n  + api: http://localhost:${port}\n  + front-end: http://localhost:3000\n  + criado por: Alejandro, Eloiza e Everton\n\n-> Última atualização às ${logDate}\n`);
 });
