@@ -96,6 +96,20 @@ class UserApplication {
         await repository.updateValue(authUserId, user.value - value);
         res.sendStatus(200);
     }
+
+    async updatePicture(req, res) {
+        const authUserId = req.headers.id;
+        await repository.updatePicture(authUserId, req.params.pictureId);
+
+        res.sendStatus(200);
+    }
+
+    async delete(req, res) {
+        const authUserId = req.headers.id;
+        await repository.delete(authUserId);
+
+        res.sendStatus(200);
+    }
 }
 
 module.exports = UserApplication;

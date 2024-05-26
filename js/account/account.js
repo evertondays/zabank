@@ -7,6 +7,9 @@ async function depositar() {
     { value: valor },
     headers
   );
+
+  document.getElementById("inputDepositar").value = null;
+  getData();
 }
 
 async function sacar() {
@@ -16,6 +19,9 @@ async function sacar() {
     .catch((err) => {
       toast(ToastTypes.ALERT, err.response.data.message);
     });
+
+    document.getElementById("inputDepositar").value = null;
+    getData();
 }
 
 async function getData() {
@@ -25,4 +31,5 @@ async function getData() {
       document.getElementById("saldo").innerText = response.data.value;
     });
 }
+
 getData();
