@@ -1,6 +1,6 @@
-const User = require('../models/User');
-const UserRepository = require('../repositories/UserRepository');
-const Credentials = require('../utils/credentials');
+const User = require("../models/User");
+const UserRepository = require("../repositories/UserRepository");
+const Credentials = require("../utils/credentials");
 
 const repository = new UserRepository();
 const credentials = new Credentials();
@@ -45,11 +45,23 @@ class UserApplication {
         res.status(401).json({ message: 'Senha incorreta!' });
     }
 
+    async logout(req, res) {
+        const authUserId = req.headers.id;
+        await repository.updateToken(authUserId, null);
+
+        res.sendStatus(200);
+    }
+
     async myself(req, res) {
         const authUserId = req.headers.id;
         const myself = await repository.find(authUserId);
 
-        const response = { id: myself.id, name: myself.name, picture: myself.picture }
+        const response = {
+            id: myself.id,
+            name: myself.name,
+            picture: myself.picture,
+            value: myself.value,
+        };
         res.status(200).json(response);
     }
 
@@ -60,17 +72,28 @@ class UserApplication {
         res.sendStatus(200);
     }
 
-    async updatePicture(req, res) {
+    async deposit(req, res) {
         const authUserId = req.headers.id;
-        await repository.updatePicture(authUserId, req.params.pictureId);
+        const value = req.body.value;
 
+        const user = await repository.find(authUserId);
+
+        await repository.updateValue(authUserId, user.value + value);
         res.sendStatus(200);
     }
 
-    async delete(req, res) {
+    async withdraw(req, res) {
         const authUserId = req.headers.id;
-        await repository.delete(authUserId);
+        const value = req.body.value;
 
+        const user = await repository.find(authUserId);
+
+        if (user.value - value < 0) {
+            res.status(400).json({ message: "Saldo Insuficiente!" });
+            return;
+        }
+
+        await repository.updateValue(authUserId, user.value - value);
         res.sendStatus(200);
     }
 }
