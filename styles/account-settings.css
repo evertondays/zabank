@@ -101,6 +101,18 @@
   }
 }
 
+/* Opções */
+.options {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 1.5rem;
+}
+
+.options .btn + .btn {
+  margin-left: 1rem;
+}
+
 /* Modal de edição de avatar */
 #modal {
   display: none;

@@ -9,9 +9,13 @@ async function getUser() {
 
 function logout() {
 	axios.delete('http://localhost:3333/api/logout', headers).then((response) => {
-		sessionStorage.removeItem('id');
-		sessionStorage.removeItem('token');
-		window.location.href = '/';
+		resetPage();
+	});
+}
+
+function deleteAccount() {
+	axios.delete('http://localhost:3333/api/myself', headers).then((response) => {
+		resetPage();
 	});
 }
 
@@ -56,6 +60,12 @@ function updateTopContent(user) {
 	}
 
 	document.querySelector('.top-content .info h3').innerText = user.name;
+}
+
+function resetPage() {
+	sessionStorage.removeItem('id');
+	sessionStorage.removeItem('token');
+	window.location.href = '/';
 }
 
 getUser();

@@ -49,6 +49,14 @@ class UserRepository {
             `);
         })
     }
+
+    async delete(id) {
+        return db().then(async (db) => {
+            return await db.run(`
+                DELETE FROM users WHERE id = ${id}
+            `);
+        })
+    }
 }
 
 module.exports = UserRepository;

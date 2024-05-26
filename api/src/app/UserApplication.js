@@ -66,6 +66,13 @@ class UserApplication {
 
         res.sendStatus(200);
     }
+
+    async delete(req, res) {
+        const authUserId = req.headers.id;
+        await repository.delete(authUserId);
+
+        res.sendStatus(200);
+    }
 }
 
 module.exports = UserApplication;
