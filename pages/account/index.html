@@ -1,70 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Font Import -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+			rel="stylesheet"
+		/>
 
-	<!-- Font Import -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-		rel="stylesheet">
+		<!-- CSS -->
+		<link rel="stylesheet" href="../../styles/reset.css" />
+		<link rel="stylesheet" href="../../styles/global.css" />
+		<link rel="stylesheet" href="../../styles/account.css" />
+		<link rel="stylesheet" href="../../styles/nav.css" />
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="../../styles/reset.css">
-	<link rel="stylesheet" href="../../styles/global.css">
-	<link rel="stylesheet" href="../../styles/account.css">
-	<link rel="stylesheet" href="../../styles/nav.css">
+		<title>Conta - ZaBank</title>
+		<link
+			size="25x25px"
+			rel="shortcut icon"
+			href="/assets/logos/favicon.png"
+		/>
+	</head>
 
-	<title>Conta - ZaBank</title>
-	<link size="25x25px" rel='shortcut icon' href="/assets/logos/favicon.png" />
-</head>
-
-<body>
-	<nav>
-		<div class="container">
-			<div class="mobile">
-				<img src="/assets/logos/icon.png" alt="Logo do bank">
-				<button id="mobile-menu-btn">
-					<i class="icon close" data-lucide="menu"></i>
-					<i class="icon open" data-lucide="x"></i>
-				</button>
-			</div>
-			<div class="left menu-collapsed">
-				<div class="logo">
-					<img src="/assets/logos/icon.png" alt="Logo do bank">
-					<h1>ZaBank</h1>
+	<body>
+		<nav>
+			<div class="container">
+				<div class="mobile">
+					<img src="/assets/logos/icon.png" alt="Logo do bank" />
+					<button id="mobile-menu-btn">
+						<i class="icon close" data-lucide="menu"></i>
+						<i class="icon open" data-lucide="x"></i>
+					</button>
 				</div>
-				<ul>
-					<li>
-						<a class="selected" href="#">Conta</a>
-					</li>
-					<li>
-						<a href="#">Investimentos</a>
-					</li>
-				</ul>
+				<div class="left menu-collapsed">
+					<div class="logo">
+						<img src="/assets/logos/icon.png" alt="Logo do bank" />
+						<h1>ZaBank</h1>
+					</div>
+					<ul>
+						<li>
+							<a class="selected" href="#">Conta</a>
+						</li>
+						<li>
+							<a href="#">Investimentos</a>
+						</li>
+					</ul>
+				</div>
+				<div class="right menu-collapsed">
+					<ul>
+						<li>
+							<a href="/pages/user/index.html">
+								<b class="desktop-version"></b>
+								<b class="mobile-version">Opções de usuário</b>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="right menu-collapsed">
-				<ul>
-					<li>
-						<a href="/pages/user/index.html">
-							<b class="desktop-version"></b>
-							<b class="mobile-version">Opções de usuário</b>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+		</nav>
 
-	<!-- Axios para efetuar as requests -->
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<!-- Icons Import -->
-	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-	<script>
-		lucide.createIcons();
-	</script>
-	<script src="/js/toast.js"></script>
-	<script src="/js/nav.js"></script>
-</body>
+		<div class="conta">
+			<div class="acoes-saldo">
+				<div class="container-conta">
+					<div id="saldo"></div>
+				</div>
+				<div id="acoesConta">
+					<p id="mensagem">
+						<b class="nome-verde">Bem vindo.</b> Aqui no ZaBank você
+						pode <b>Depositar</b> e
+						<b>Sacar</b>
+						quantias. Além disso, você pode <b>Transferir</b> para
+						qualquer pessoa, onde e quando quiser!
+					</p>
+
+					<div class="inputButton">
+						<input
+							id="inputDepositar"
+							type="number"
+							placeholder="R$0.00"
+						/>
+						<button onclick="depositar()">Depositar</button>
+					</div>
+
+					<div class="inputButton">
+						<input
+							id="inputSacar"
+							type="number"
+							placeholder="R$0.00"
+						/>
+						<button onclick="sacar()">Sacar</button>
+					</div>
+				</div>
+				<button id="deletar">deletar</button>
+			</div>
+
+			<img
+				class="img-conta"
+				src="/assets/images/account-background-3.png"
+				alt=""
+			/>
+		</div>
+
+		<!-- Axios para efetuar as requests -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<!-- Icons Import -->
+		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+		<script>
+			lucide.createIcons();
+		</script>
+		<script src="/js/toast.js"></script>
+		<script src="/js/nav.js"></script>
+		<script src="/js/utils.js"></script>
+
+		<script src="/js/account/account.js"></script>
+	</body>
+</html>
