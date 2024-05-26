@@ -14,7 +14,7 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="../../styles/reset.css">
 	<link rel="stylesheet" href="../../styles/global.css">
-	<link rel="stylesheet" href="../../styles/account.css">
+	<link rel="stylesheet" href="../../styles/account-settings.css">
 	<link rel="stylesheet" href="../../styles/nav.css">
 
 	<title>Perfil - ZaBank</title>
@@ -22,6 +22,30 @@
 </head>
 
 <body>
+	<div id="modal">
+		<div class="modal-container">
+			<div class="modal-header">
+				<h1>Modificar avatar</h1>
+				<button class="close-button">
+					<i class="icon" data-lucide="x"></i>
+				</button>
+			</div>
+			<div class="avatars-list">
+				<div class="avatar" onclick="changeAvatarPicture(1)">
+					<img class="avatar-picture" src="/assets/svgs/pic-1.svg">
+				</div>
+				<div class="avatar" onclick="changeAvatarPicture(2)">
+					<img class="avatar-picture" src="/assets/svgs/pic-2.svg">
+				</div>
+				<div class="avatar" onclick="changeAvatarPicture(3)">
+					<img class="avatar-picture" src="/assets/svgs/pic-3.svg">
+				</div>
+				<div class="avatar" onclick="changeAvatarPicture(4)">
+					<img class="avatar-picture" src="/assets/svgs/pic-4.svg">
+				</div>
+			</div>
+		</div>
+	</div>
 	<nav>
 		<div class="container">
 			<div class="mobile">
@@ -49,15 +73,29 @@
 		</div>
 	</nav>
 
+	<div class="page-content">
+		<div class="top-content">
+			<div class="image-container">
+				<label>Alterar avatar</label>
+			</div>
+			<div class="info">
+				<h3></h3>
+				<h4>Atualize aqui seu avatar e suas informações pessoais</h4>
+			</div>
+		</div>
+	</div>
+
+	<form action=""></form>
+
 	<!-- Axios para efetuar as requests -->
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<!-- Icons Import -->
 	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-	<script>
-		lucide.createIcons();
-	</script>
 	<script src="/js/toast.js"></script>
 	<script src="/js/nav.js"></script>
     <script src="/js/utils.js"></script>
     <script src="/js/user/main.js"></script>
+	<script>
+		lucide.createIcons();
+	</script>
 </body>
