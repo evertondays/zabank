@@ -41,6 +41,14 @@ class UserRepository {
             `, userId, token);
         })
     }
+
+    async updatePicture(id, picture) {
+        return db().then(async (db) => {
+            return await db.run(`
+                UPDATE users SET picture = '${picture}' WHERE id = ${id}
+            `);
+        })
+    }
 }
 
 module.exports = UserRepository;

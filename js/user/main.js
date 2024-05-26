@@ -32,9 +32,9 @@ function addEventsListeners() {
 	document.querySelector('.close-button').addEventListener('click', () => toggleOpenModal());
 }
 
-function changeAvatarPicture(picture) {
-
-	toggleOpenModal();
+async function changeAvatarPicture(picture) {
+	await axios.put(`http://localhost:3333/api/user/picture/${picture}`, null, headers);
+	location.reload();
 }
 
 function updateTopContent(user) {
