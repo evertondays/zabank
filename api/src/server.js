@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 app.use(require('./controllers/UserController'));
+app.use(require('./controllers/InvestmentController'));
 
 app.listen(port, () => {
     var date = new Date();

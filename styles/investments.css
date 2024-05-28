@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 main {
   width: 100%;
   display: flex;
@@ -21,7 +16,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 115px 0;
 }
 .container-opcoes > h2 {
   text-align: center;
