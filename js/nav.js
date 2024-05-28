@@ -26,7 +26,11 @@ function getUserName() {
     
     if (!name) return;
 
-    document.querySelector('.desktop-version').textContent = `Olá, ${name}`;
+    try {
+        document.querySelector('.desktop-version').textContent = `Olá, ${name}`;
+    } catch(err) {
+        //do nothing
+    }
 }
 
 getUserName();

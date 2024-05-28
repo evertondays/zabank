@@ -153,13 +153,19 @@ b {
   background-color: var(--primary);
 }
 
+.outline-alert {
+  background-color: transparent;
+  border: solid 2px var(--alert);
+  color: var(--alert);
+}
+
 .primary:hover {
   background-color: var(--primary-0);
 }
 
 .toast {
   display: flex;
-  margin: 2rem 3rem;
+  margin: 7rem 3rem;
   position: fixed;
   background-color: transparent;
 
