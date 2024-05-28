@@ -61,6 +61,7 @@ class UserApplication {
             name: myself.name,
             picture: myself.picture,
             value: myself.value,
+            hasAccount: myself.has_account
         };
         res.status(200).json(response);
     }
@@ -84,7 +85,7 @@ class UserApplication {
 
     async withdraw(req, res) {
         const authUserId = req.headers.id;
-        const value = req.body.value;
+        const value = parseInt(req.params.value);
 
         const user = await repository.find(authUserId);
 
@@ -107,6 +108,28 @@ class UserApplication {
     async delete(req, res) {
         const authUserId = req.headers.id;
         await repository.delete(authUserId);
+
+        res.sendStatus(200);
+    }
+
+    async createAccount(req, res) {
+        const authUserId = req.headers.id;
+        const myself = await repository.find(authUserId);
+
+        if (myself.has_account == 1) {
+            res.status(400).json({ message: 'Você já tem conta criada' });
+            return;
+        }
+
+        await repository.updateAccount(authUserId, 1);
+        res.sendStatus(200);
+    }
+
+    async deleteAccount(req, res) {
+        const authUserId = req.headers.id;
+
+        await repository.updateAccount(authUserId, 0);
+        await repository.updateValue(authUserId, 0);
 
         res.sendStatus(200);
     }

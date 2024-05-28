@@ -15,8 +15,8 @@ class UserRepository {
   async store(user) {
     return db().then(async (db) => {
       return await db.run(`
-                INSERT INTO users (name, email, password)
-                VALUES ('${user.name}', '${user.email}', '${user.password}')
+                INSERT INTO users (name, email, password, has_account)
+                VALUES ('${user.name}', '${user.email}', '${user.password}', 1)
             `);
     });
   }
@@ -71,6 +71,14 @@ class UserRepository {
                 DELETE FROM users WHERE id = ${id}
             `);
         })
+    }
+
+    async updateAccount(id, value) {
+      return db().then(async (db) => {
+        return await db.run(`
+            UPDATE users SET has_account = '${value}' WHERE id = ${id}
+        `);
+    })
     }
 }
 

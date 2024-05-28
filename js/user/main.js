@@ -68,5 +68,15 @@ function resetPage() {
 	window.location.href = '/';
 }
 
+async function recreateAccount() {
+	axios
+		.post("http://localhost:3333/api/user/account", null, headers)
+		.then((response) => {
+			window.location.href = '../account/index.html';
+		}).catch((err) => {
+			toast(ToastTypes.ALERT, err.response.data.message);
+		});
+}
+
 getUser();
 addEventsListeners();
