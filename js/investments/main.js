@@ -1,6 +1,26 @@
+const headers = getAuthHeaders();
+
 function createInvestment(name) {
     inputElement = getElementByName(name);
-    console.log(inputElement);
+
+    axios.post('http://localhost:3333/api/investment', {
+        name: name,
+        qtt:  inputElement.value
+    }, headers).then(() => {
+        inputElement.value = null;
+	})
+	.catch((err) => {
+		toast(ToastTypes.ALERT, err.response.data.message);
+	});
+}
+
+function listInvestments(name) {
+    axios.get('http://localhost:3333/api/investment', headers).then((response) => {
+        console.log(response);
+	})
+	.catch((err) => {
+		toast(ToastTypes.ALERT, err.response.data.message);
+	});
 }
 
 function getElementByName(name) {
@@ -21,3 +41,5 @@ function getElementByName(name) {
 
     return document.getElementById(elementId);
 }
+
+listInvestments()
