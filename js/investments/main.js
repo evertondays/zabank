@@ -16,11 +16,28 @@ function createInvestment(name) {
 
 function listInvestments(name) {
     axios.get('http://localhost:3333/api/investment', headers).then((response) => {
-        console.log(response);
-	})
-	.catch((err) => {
-		toast(ToastTypes.ALERT, err.response.data.message);
+        generateTableItems(response.data);
 	});
+}
+
+function generateTableItems(items) {
+    const table = document.getElementById('list-table');
+
+    items.forEach(element => {
+        let item = generateTableItem(element);
+        table.appendChild(item);
+    });
+}
+
+function generateTableItem(item) {
+    let html = `
+        <td>${item.name}</td>
+        <td>${item.qtt}</td>
+    `;
+
+    let element = document.createElement("tr");
+    element.innerHTML = html;
+    return element;
 }
 
 function getElementByName(name) {
