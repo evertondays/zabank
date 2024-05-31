@@ -16,9 +16,13 @@ Pronto a api está disponível na porta 3333 e o front-end na porta 3000!
 
 ## Tecnologias
 🎨 Utilizamos vanilla javascript e html/css puros para o front-end.
+
 ⚙️ No backend utilizamos [NodeJs](https://nodejs.org/en) com a biblioteca express para criar o servidor.
+
 💾 Temos um banco de dados [SQLite](https://www.sqlite.org/) para guardar as informações.
+
 🔑 Autenticação utilizando [Argon2](https://sierti.com.br/blog/argon2id-seguranca-senhas) para a criptografia de senhas.
+
 
 ## O que foi feito
 
