@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZaBank - Investimentos</title>
+  <link size="25x25px" rel="shortcut icon" href="/assets/logos/favicon.png" />
+  <link rel="stylesheet" href="../../styles/global.css" />
+  <link rel="stylesheet" href="../../styles/investments.css" />
+  <link rel="stylesheet" href="../../styles/nav.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <div class="mobile">
+        <img src="/assets/logos/icon.png" alt="Logo do bank" />
+        <button id="mobile-menu-btn">
+          <i class="icon close" data-lucide="menu"></i>
+          <i class="icon open" data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="left menu-collapsed">
+        <div class="logo">
+          <img src="/assets/logos/icon.png" alt="Logo do bank" />
+          <h1>ZaBank</h1>
+        </div>
+        <ul>
+          <li>
+            <a href="/pages/account/index.html">Conta</a>
+          </li>
+          <li>
+            <a class="selected" href="#">Investimentos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right menu-collapsed">
+        <ul>
+          <li>
+            <a href="/pages/user/index.html">
+              <b class="desktop-version"></b>
+              <b class="mobile-version">Opções de usuário</b>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container-main">
+      <section class="container-opcoes">
+        <h2>Opções de Investimento em Renda Fixa</h2>
+        <div class="opcoes">
+          <div class="opcoes-rdc">
+            <h3>RDC DI 30</h3>
+            <div class="INF">
+              <p><strong>Investimento mínimo:</strong> R$ 50,00</p>
+              <p><strong>Rentabilidade:</strong> A partir de 82,00% do CDI</p>
+
+              <p><strong>Resgate:</strong> Após 30 dias</p>
+            </div>
+            <button class="button-opcoes">
+              <label for="texto">Investir</label>
+              <input id="i-30" type="number" id="texto" name="texto">
+              <input type="submit" onclick="createInvestment('RDC DI 30')" value="Investir"></button>
+          </div>
+
+          <div class="opcoes-rdc">
+            <h3>RDC DI 60</h3>
+
+            <div class="INF">
+              <p><strong>Investimento mínimo:</strong> R$ 50,00</p>
+              <p><strong>Rentabilidade:</strong> A partir de 84,00% do CDI</p>
+
+              <p><strong>Resgate:</strong> Após 60 dias</p>
+            </div>
+            <button class="button-opcoes">
+              <label for="texto">Investir</label>
+              <input id="i-60" type="number" id="texto" name="texto">
+              <input type="submit" onclick="createInvestment('RDC DI 60')" value="Investir"></button>
+          </div>
+        </div>
+        <div class="opcoes">
+          <div class="opcoes-rdc">
+            <h3>RDC DI 181</h3>
+
+            <div class="INF">
+              <p><strong>Investimento mínimo:</strong> R$ 50,00</p>
+              <p><strong>Rentabilidade:</strong> A partir de 85,00% do CDI</p>
+
+              <p><strong>Resgate:</strong> Após 181 dias</p>
+            </div>
+            <button class="button-opcoes">
+              <label for="texto">Investir</label>
+              <input id="i-181" type="number" id="texto" name="Investir">
+              <input type="submit" onclick="createInvestment('RDC DI 181')" value="Enviar"></button>
+          </div>
+
+          <div class="opcoes-rdc">
+            <h3>RDC DI 361</h3>
+
+            <div class="INF">
+              <p><strong>Investimento mínimo:</strong> R$ 50,00</p>
+              <p><strong>Rentabilidade:</strong> A partir de 87,00% do CDI</p>
+
+              <p><strong>Resgate:</strong> Após 361 dias</p>
+            </div>
+            <button class="button-opcoes">
+              <label for="texto">Investir</label>
+              <input id="i-361" type="number" id="texto" name="texto">
+              <input type="submit" onclick="createInvestment('RDC DI 361')" value="Investir"></button>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="container-img">
+      <img src="../../assets/images/IN.jpg" alt="" class="img-investiment" />
+    </section>
+  </main>
+  <table id="list-table">
+    <tr>
+      <th>Nome</th>
+      <th>Quantidade comprada</th>
+    </tr>
+  </table>
+</body>
+
+<!-- Axios para efetuar as requests -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- Icons Import -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+<script src="/js/nav.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/toast.js"></script>
+<script src="/js/investments/main.js"></script>
+
+</html>
