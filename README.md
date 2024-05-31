@@ -9,6 +9,7 @@ Dentro da pasta do projeto, abra a pasta **api**. Nela rode:
 
 
 ```bat
+npm i
 npm run migrate
 npm start
 ```
