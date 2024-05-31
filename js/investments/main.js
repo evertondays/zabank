@@ -8,6 +8,7 @@ function createInvestment(name) {
         qtt:  inputElement.value
     }, headers).then(() => {
         inputElement.value = null;
+        listInvestments();
 	})
 	.catch((err) => {
 		toast(ToastTypes.ALERT, err.response.data.message);
@@ -16,8 +17,17 @@ function createInvestment(name) {
 
 function listInvestments(name) {
     axios.get('http://localhost:3333/api/investment', headers).then((response) => {
+        resetTable();
         generateTableItems(response.data);
 	});
+}
+
+function resetTable() {
+    const trs = document.querySelectorAll('td');
+
+    trs.forEach((tr) => {
+        tr.remove();
+    });
 }
 
 function generateTableItems(items) {
