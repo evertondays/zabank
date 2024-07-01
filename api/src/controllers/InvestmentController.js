@@ -5,7 +5,7 @@ const AuthMiddleware = require("../middlewares/AuthMiddleware");
 
 const investmentApplication = new InvestmentApplication();
 
-routes.get('/api/investment', AuthMiddleware, investmentApplication.list);
-routes.post('/api/investment', AuthMiddleware, investmentApplication.create);
+routes.get("/api/investment", AuthMiddleware, investmentApplication.list);
+routes.post("/api/investment", AuthMiddleware, investmentApplication.create);
 
 module.exports = routes;
