@@ -85,7 +85,7 @@ class UserApplication {
 
 	async withdraw(req, res) {
 		const authUserId = req.headers.id;
-		const value = parseInt(req.params.value);
+		const value = Number.parseInt(req.params.value);
 
 		const user = await repository.find(authUserId);
 

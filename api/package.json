@@ -7,7 +7,8 @@
 		"start": "nodemon src/server.js",
 		"migrate": "node database/migration.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"format": "yarn biome format --write ."
+		"format": "yarn biome format --write .",
+		"lint": "yarn biome lint --write ."
 	},
 	"author": "",
 	"license": "MIT",

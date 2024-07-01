@@ -23,7 +23,7 @@ frontend.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "..", "..", "index.html"));
 });
 
-frontend.listen(port, function (err) {
+frontend.listen(port, (err) => {
 	if (err) console.log(err);
 	console.log("Front-end rodando em http://localhost:" + port);
 });
