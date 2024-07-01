@@ -1,32 +1,38 @@
-# ZaBank
+# Welcome to Remix!
 
-O **ZaBank** é um banco digital inovador que oferece uma experiência bancária completa, simples, segura e focada no cliente. A proposta é simular um banco com o NuBank ou o Inter que possui conta e investimentos integrados em um único lugar, podendo criar conta fazer login, operações básicas de deposito / saque e editar seu avatar.
+- 📖 [Remix docs](https://remix.run/docs)
 
-Ao entrar no site crie uma conta e aproveite!
+## Development
 
-## Como rodar a aplicação
-Dentro da pasta do projeto, abra a pasta **api**. Nela rode:
+Run the dev server:
 
+```shellscript
+npm run dev
+```
 
-```bat
-npm i
-npm run migrate
+## Deployment
+
+First, build your app for production:
+
+```sh
+npm run build
+```
+
+Then run the app in production mode:
+
+```sh
 npm start
 ```
-Pronto a api está disponível na porta 3333 e o front-end na porta 3000!
 
-## Tecnologias
-🎨 Utilizamos vanilla javascript e html/css puros para o front-end.
+Now you'll need to pick a host to deploy it to.
 
-⚙️ No backend utilizamos [NodeJs](https://nodejs.org/en) com a biblioteca express para criar o servidor.
+### DIY
 
-💾 Temos um banco de dados [SQLite](https://www.sqlite.org/) para guardar as informações.
+If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
 
-🔑 Autenticação utilizando [Argon2](https://sierti.com.br/blog/argon2id-seguranca-senhas) para a criptografia de senhas.
+Make sure to deploy the output of `npm run build`
 
+- `build/server`
+- `build/client`
 
-## O que foi feito
-
-**Alejandro** - *Conta bancaria:* Rotas de sacar e depositar (PUT) e buscar informações do usuário (GET)
-**Eloiza** - *Investimentos:* Rotas de criar novo investimento (POST) e listar investimentos (GET)
-**Everton** - *Landing page / perfil:* Rotas de login e criação de usuario (POST), editar avatar (PUT) e Deletar usuário (DELETE).
+## Styling
